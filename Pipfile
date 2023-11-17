@@ -14,8 +14,10 @@ faker = "*"
 sqlalchemy = "*"
 importlib-resources = "*"
 flask-bcrypt = "*"
+gunicorn = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "2.7"
+python_version = "3"

@@ -5,11 +5,11 @@ from flask_restful import Api, Resource
 from sqlalchemy import and_
 from werkzeug.exceptions import NotFound
 from flask_cors import CORS
-
+import os
 from models import db, Blog, Comment, User
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URI')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.config['JSONIFY_PRETTYPRINT_REGULAR']= True
 migrate = Migrate(app,db,render_as_batch=True)
