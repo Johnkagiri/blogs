@@ -88,7 +88,7 @@ function Signup( {isLoggedIn, setIsLoggedIn} ) {
       });
 
       if (response.ok) {
-        const data = await response.json();
+        
         setLoginFormData({ username: "", password: "" });
         enqueueSnackbar('Login Successful', {variant:'success'})
 
