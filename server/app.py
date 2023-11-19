@@ -24,11 +24,11 @@ app.secret_key = b'?w\x85Z\x08Q\xbdO\xb8\xa9\xb65Kj\xa9_'
 db.init_app(app)
 api = Api(app)
 
-# @app.before_request
-# def check_if_logged_in():
-#     allowed_endpoint=['login','signup','session','logout','users']
-#     if not session.get('userid') and request.endpoint not in allowed_endpoint:
-#         return {"error":'must login first'}
+@app.before_request
+def check_if_logged_in():
+    allowed_endpoint=['login','signup','session','logout','users']
+    if not session.get('userid') and request.endpoint not in allowed_endpoint:
+        return {"error":'must login first'}
     
 
 class SignUp(Resource):
