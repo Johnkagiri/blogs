@@ -1,3 +1,5 @@
+from dotenv import load_dotenv
+load_dotenv()
 from flask import Flask
 from flask import Flask, jsonify, request, make_response, session
 from flask_migrate import Migrate
@@ -7,6 +9,7 @@ from werkzeug.exceptions import NotFound
 from flask_cors import CORS
 import os
 from models import db, Blog, Comment, User
+
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URI')

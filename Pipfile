@@ -16,6 +16,7 @@ importlib-resources = "*"
 flask-bcrypt = "*"
 gunicorn = "*"
 psycopg2-binary = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
